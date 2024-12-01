@@ -44,3 +44,17 @@ Contributors: Triyasha Ghosh Dastidar and Priya Deshpande
 
 ---
 
+## Data Collection
+
+To collect and preprocess the dataset for prompt generation:
+
+### 1. Install Dependencies:
+Make sure all dependencies are installed by running the following command:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Run the script to download dataset:
+``` 
+bash scripts/run_data_collection.sh
+```
