@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .output div {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prompt Generator</h1>
+    <form id="promptForm">
+        <input type="text" id="inputPrompt" placeholder="Enter your input prompt..." required />
+        <button type="submit">Generate Prompts</button>
+    </form>
+    <div class="output" id="outputContainer"></div>
+
+    <script>
+        document.getElementById('promptForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const inputPrompt = document.getElementById('inputPrompt').value;
+            const outputContainer = document.getElementById('outputContainer');
+
+            // Clear previous output
+            outputContainer.innerHTML = '';
+
+            // Make API request
+            try {
+                const response = await fetch('http://127.0.0.1:5000/generate_prompts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ input_prompt: inputPrompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch results');
+                }
+
+                const result = await response.json();
+
+                // Display results
+                outputContainer.innerHTML = `
+                    <div><strong>Input Prompt:</strong> ${result.input_prompt}</div>
+                    <div><strong>Tree of Thought (ToT) Prompt:</strong> ${result.tree_of_thought_prompt}</div>
+                    <div><strong>Graph of Thought (GoT) Prompt:</strong> ${result.graph_of_thought_prompt}</div>
+                `;
+            } catch (error) {
+                outputContainer.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+            }
+        });
+    </script>
+</body>
+</html>

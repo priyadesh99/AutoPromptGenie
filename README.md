@@ -8,15 +8,12 @@ Contributors: Triyasha Ghosh Dastidar and Priya Deshpande
 ## Components Description
 
 ### `data/`
-- **raw/**: Contains the original dataset files.
-- **processed/**: Preprocessed dataset files ready for use in modelling.
+- **train.json**: Contains example training data for tutorial purpose.
 
 ### `src/`
-- **data_processing.py**: Script to preprocess the dataset (e.g., filtering, tokenization).
-- **prompt_generation.py**: Script to generate GoT and ToT prompts using an LLM.
-- **story_generation.py**: Script to generate stories from the generated prompts.
-- **evaluation.py**: Script to evaluate generated prompts and stories using metrics.
-- **utils.py**: Utility functions used across scripts.
+- **prompt_generation/**: Script to generate candidate prompts
+- - **tot_prompts.py**: Script to generate candidate ToT prompts.
+
 
 ### `notebooks/`
 - **data_exploration.ipynb**: Jupyter notebook to analyze and visualize the dataset.
@@ -58,3 +55,14 @@ pip install -r requirements.txt
 ``` 
 bash scripts/run_data_collection.sh
 ```
+
+
+### Troubleshooting:
+
+If ModuleNotFoundError occurs due to not being able to find relative imports:
+
+```
+export PYTHONPATH=$PYTHONPATH:<PATH_TO_REPO>
+source ~/.bashrc
+```
+
