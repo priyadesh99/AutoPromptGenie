@@ -453,8 +453,9 @@ Most of the recent studies use LLM as a judge or human evaluator for checking if
 
 ![Tot1](./images/tot1.png)
 ![Tot2](./images/tot2.png)
-![Tot3](./images/tot3.png)
+![Tot3](./images/Tot3.png)
 
+#### Metrics which are commonly used for long form text evaluation
 ![Perplexity](./images/perplexity.png)
 
 ![Self BLEU Scores](./images/Screenshot%20from%202024-12-19%2017-49-34.png)
@@ -663,6 +664,25 @@ Additionally, a model could be fine-tuned to better align with specific evaluati
 The latency for prompt creation in GoT is slightly higher than in ToT, but the difference is minimal. 
 
 However, when it comes to the generation of stories, GoT exhibits a significantly longer processing time compared to ToT. This discrepancy suggests that while GoT's reasoning framework may excel in certain areas, it comes with a notable trade-off in terms of efficiency during story creation.
+
+### Future Work
+
+1. **Testing with Different Configurations**  
+   - Experiment with various configurations for the tree structure (e.g., varying depth \(h\), branching factor \(k\), and total number of nodes).  
+   - Adjust graph-specific parameters such as edge density and node connectivity to analyze their impact on story coherence, creativity, and complexity.
+
+2. **Expanding to Other Use Cases**  
+   - Evaluate the effectiveness of Tree of Thought (ToT) and Graph of Thought (GoT) frameworks in domains beyond storytelling, such as solving math problems, logic puzzles, and decision-making tasks.  
+   - Extend the use case beyond creative writing by identifying datasets and challenges in these domains, ensuring broader applicability.  
+
+3. **Refining the Evaluation Framework**  
+   - Collaborate with industry experts to design a robust, domain-specific evaluation framework tailored for creative and problem-solving tasks.  
+   - Explore metrics and datasets employed in related work on prompt engineering and integrate them into the evaluation process.  
+   - Identify and incorporate additional metrics that address gaps in existing evaluation standards, with a focus on relevance, coherence, and adaptability.
+
+4. **Incorporating Feedback Loops**  
+   - Implement dynamic feedback loops to iteratively refine prompt structures based on evaluation results, improving the overall performance of generated outputs.  
+   - Investigate innovative metrics for assessment and discuss their utility in benchmarking the approach across diverse use cases.
 
 
 ### Troubleshooting:
