@@ -1,6 +1,6 @@
 # AutoPromptGenie
 
-Contributors: Triyasha Ghosh Dastidar and Priya Deshpande
+Contributors: Triyasha Ghosh Dastidar(tg2936) and Priya Deshpande(ppd2119)
 
 
 Prompting has emerged as a cornerstone of modern natural language processing (NLP), especially with the rise of large language models (LLMs). By crafting specific, well-designed prompts, users can guide LLMs to generate more accurate, creative, and contextually relevant responses. This "prompt engineering" process enables diverse applications, from content creation and data summarization to answering complex queries and solving industry-specific problems. As LLMs become more capable, effective prompting is key to unlocking their potential, making it an essential skill for leveraging AI systems efficiently.
