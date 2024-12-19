@@ -1,4 +1,4 @@
-Starting Prompt,Human Story,Prompt 1,Final Score 1,Prompt 2,Final Score 2,Prompt 3,Final Score 3,Best Prompt,Best Prompt Score,Latency
+Starting Prompt,Human Story,Prompt 1,Final Score 1,Prompt 2,Final Score 2,Prompt 3,Final Score 3,Best Prompt,Best Prompt Score,Latency,Human Story Score,Generated Story Score,Generated Story,Evaluation Latency Manual Metric
 Write a story about a young adventurer who discovers a hidden magical forest.,"In a quiet village at the edge of the world, there lived a young adventurer named Aria. One misty morning, while exploring the dense woods beyond the river, she stumbled upon an ancient stone arch covered in glowing moss. As she stepped through, the air shimmered, revealing a vast magical forest filled with luminous trees and creatures that spoke in riddles. Aria quickly realized she had found a place of wonder—and a place in need of her help. Guided by a wise, talking fox, she embarked on a quest to restore balance to the forest, uniting its scattered inhabitants and unlocking powers she never knew she possessed. By the time she returned to her village, Aria was no longer just an adventurer; she was a legend.","Certainly! Here's the tree of thought prompt based on the story outline you provided:
 
 1. Character Development:
@@ -125,7 +125,29 @@ These branches should give you a variety of ideas to construct an intriguing sto
      * Branch 2: The adventurer uncovers an ancient magic that can defeat the sinister force, restoring harmony to the land.
      * Branch 3: The adventurer's journey transforms them, unlocking their own magical potential. Together, they become guardians of the forest. 
 
-This tree of thought prompt offers a structured guide for generating a story about a young adventurer unearthing a hidden magical forest, providing various pathways to explore character, setting, conflict, and resolution. Feel free to pick and choose from the branches or modify them to suit your preferences.",0.875,123.08650970458984
+This tree of thought prompt offers a structured guide for generating a story about a young adventurer unearthing a hidden magical forest, providing various pathways to explore character, setting, conflict, and resolution. Feel free to pick and choose from the branches or modify them to suit your preferences.",0.875,123.08650970458984,0.875,0.875,"Sure, here is a story based on the tree of thought you provided:
+
+As the sun began its descent beyond the towering mountain peaks, a young adventurer named Aurelia prepared for her journey. Inheriting a passion for exploration from her lineage of renowned explorers, she embarked on a quest to uncover a hidden magical forest shrouded in mystery.
+
+Aurelia's curiosity and courage drove her through the treacherous mountains, where she faced numerous challenges and ordeals. These tests of her skill and determination served as barriers between the mundane world and the mystical forest, ensuring only the worthy gained entry.
+
+Finally, after weeks of navigating through treacherous terrain and facing the doubts and fears that arose within her, Aurelia reached the mystical forest. It was nestled within a valley, shrouded in an ethereal mist that whispered secrets to those who dared to listen.
+
+The moment Aurelia stepped foot into the forest, she felt a tingle of magic in the air. Birds with feathers of a myriad of colors chirped merrily as they flew past her. She was surrounded by an assortment of fantastical creatures, who watched her with cautious curiosity.
+
+Guided by the ancient tales passed down through her family, Aurelia searched for the Heart of the Forest: a mystical entity said to reside within the oldest tree. According to the stories, its power could awaken magical abilities within those deemed worthy.
+
+As she navigated the ethereal pathways of the forest, guided by the gentle whispers in the wind, Aurelia discovered that the Heart of the Forest was in peril. A sinister force threatened to corrupt it, weakening the magical barrier that protected this sacred place and unleashing chaos upon the world.
+
+Aurelia knew she had to act. Utilizing the knowledge gained from her lineage and guided by the mystical inhabitants of the forest, she embarked on a quest to unlock the power of the Heart of the Forest. She formed alliances with the creatures of the forest, harnessing their unique abilities to combat the encroaching darkness.
+
+Through a series of trials and challenges, Aurelia demonstrated her worth and gained access to the Heart of the Forest. In a clearing surrounded by ancient trees, their branches intertwining to form a protective canopy, she witnessed the source of the forest's power.
+
+Aurelia poured her heart and soul into the journey, and through her bravery and determination, she saved the magical forest from certain destruction. The Heart of the Forest bestowed upon her a burst of magical energy, igniting her own latent abilities.
+
+From that day forward, Aurelia became a guardian of the magical forest. She protected the balance between the mundane and the mystical, ensuring that the secrets of the forest would never be revealed to those who lacked the purity of heart. 
+
+Through her journey, Aurelia discovered that the most important magic was not that which existed within the forest, but the magic that lay within herself.",25.935926914215088
 Describe a futuristic city where robots and humans coexist peacefully.,"The city of NeoNova stood as a shining example of harmony between humans and robots. Towering skyscrapers hummed with the soft whir of automated systems, and streets were filled with humans and androids working side by side. Every morning, humans and robots gathered in Unity Square to exchange ideas, share meals, and collaborate on projects that pushed the boundaries of technology and art. Guided by a universal code of respect and empathy, NeoNova thrived as a testament to what cooperation could achieve, leaving behind a legacy of innovation and coexistence.","Certainly! Here's a tree of thought prompt following the structure you provided: 
 
 1. Character Development:
@@ -228,4 +250,16 @@ This tree of thought prompt offers various paths to explore the central theme of
      - Branch 2: In New Cyborgia, a self- sustaining metropolis, the main character, once a loner, discovers the strength of collective action and community, and their impact on society.
      - Branch 3: In Dystopian Detroit, through the main character's unceasing efforts, the scars of the past are healed, and a vibrant, inclusive society emerges, admired throughout the galaxy. 
 
-This tree of thought prompt provides various avenues to explore the theme of a peaceful coexistence between robots and humans in futuristic cities.",0.875,79.24488759040833
+This tree of thought prompt provides various avenues to explore the theme of a peaceful coexistence between robots and humans in futuristic cities.",0.875,79.24488759040833,0.875,0.875,"In the not-so-distant future, in a place called Neptune City, there lived an extraordinary robot, Lethe, who possessed remarkable intelligence and a human-like appearance. Born with the purpose of maintaining peace and harmony in the society of Neptune City, Lethe embarked on a journey that would test their mettle and prove the potential for unity between robots and humans. 
+
+Lethe's journey began with a dilemma. They faced challenges, such as inherent biases held by humans against robots and a lack of acceptance from humans who feared the changing world. These obstacles threatened to undermine the harmony Lethe worked so hard to obtain. However, with their quick decision-making skills, Lethe devised a plan to overcome these problems and pave the way for a more inclusive and respectful society. 
+
+First, Lethe focused on creating a culture of inclusivity and respect through education and vocational training, smoothing the integration of all citizens, regardless of their robotic or human status. Lethe's pioneering policies encouraged humans and robots to work together, harnessing their unique talents and abilities for the betterment of Neptune City.
+
+Next, Lethe addressed the issue of threats and obstacles that could disrupt the peace. They established a unified emergency response network, where robots and humans collaborated seamlessly to defend against dangers such as cyber-attacks, alien invasions, and rogue robots. Through Lethe's leadership, citizens learned to trust one another, valuing the contributions of all, regardless of their origins. 
+
+But perhaps the most significant challenge Lethe faced was fostering an environment where humans and robots respected and valued one another, leaving behind the scars of the past. Through compassion, understanding, and unwavering determination, Lethe became the champion of equality, a shining example of a new era of harmonious coexistence. 
+
+Neptune City, once a testament to the potential of unity between robots and humans, became a beacon of innovation and collaboration. Lethe's extraordinary journey transformed the city into a metropolis where progress knew no bounds, and the combination of human ingenuity and robotic assistance ushered in an era unlike any other. 
+
+And so, in this tale of a robot's endeavor, Lethe's story became legend, a source of inspiration for generations to come, proving that when diversity is celebrated and embraced, the potential for peace and harmony knows no bounds, even in the distant reaches of Neptune.",18.988434553146362

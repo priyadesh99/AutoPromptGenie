@@ -4,7 +4,9 @@ import numpy as np
 import cohere
 from typing import List, Tuple, Dict
 import pandas as pd
-
+from src.utils import generate_story_with_cohere, calculate_average_scores
+import time
+import csv
 
 from dotenv import load_dotenv
 # Load environment variables from .env file
@@ -90,8 +92,8 @@ def rank_prompts_post_generation_LLM(input_prompt: str, candidate_prompts: List[
     prompt_ranking = []
     
     for prompt in candidate_prompts:
-        story = evaluate_with_cohere_story_from_prompt(prompt, api_key)
-        scores_generated = evaluate_with_cohere_story_from_prompt(prompt, story, human_story, api_key)
+        story = generate_story_with_cohere(prompt, cohere_api_key)
+        scores_generated = evaluate_with_cohere_story_from_prompt(input_prompt, story, human_story, api_key)
         avg_score_generated = np.mean(np.array(list(scores_generated.values())))
         
         # Add the prompt, individual scores, and average score to the ranking list
@@ -108,12 +110,6 @@ def rank_prompts_post_generation_LLM(input_prompt: str, candidate_prompts: List[
     best_prompt = ranked_prompts[0]
 
     return ranked_prompts, best_prompt
-
-import argparse
-import os
-import pandas as pd
-import numpy as np
-from cohere import Client
 
 def process_and_rank_prompts(input_csv: str, output_csv: str, cohere_api_key: str):
     """
@@ -135,7 +131,16 @@ def process_and_rank_prompts(input_csv: str, output_csv: str, cohere_api_key: st
         print(f"Error: Missing one or more required columns: {required_columns}")
         return
 
-    output_data = []  # Collect data for all rows
+    # Prepare the header
+    header = [
+        'Starting Prompt', 'Human Story', 
+        'Prompt 1', 'Final Score 1', 
+        'Prompt 2', 'Final Score 2', 
+        'Prompt 3', 'Final Score 3', 
+        'Best Prompt', 'Best Prompt Score', 'Latency'
+    ]
+
+    output_data = []
 
     for index, row in df.iterrows():
         starting_prompt = row['Prompt']
@@ -143,25 +148,34 @@ def process_and_rank_prompts(input_csv: str, output_csv: str, cohere_api_key: st
         generated_prompts = [row['Response 1'], row['Response 2'], row['Response 3']]
 
         try:
+            # Measure latency
+            start_time = time.time()
             ranked_prompts, best_prompt = rank_prompts_post_generation_LLM(
                 starting_prompt, generated_prompts, human_story, cohere_api_key
             )
+            latency = time.time() - start_time
 
-            for entry in ranked_prompts:
-                output_data.append({
-                    "Starting Prompt": starting_prompt,
-                    "Generated Prompt": entry['prompt'],
-                    "Average Score": entry['average_score']
-                })
+            row_data = [
+                starting_prompt, 
+                human_story, 
+                ranked_prompts[0]['prompt'], ranked_prompts[0]['average_score'],
+                ranked_prompts[1]['prompt'], ranked_prompts[1]['average_score'],
+                ranked_prompts[2]['prompt'], ranked_prompts[2]['average_score'],
+                best_prompt['prompt'], best_prompt['average_score'], latency
+            ]
+
+            output_data.append(row_data)
 
         except Exception as e:
             print(f"Error processing row {index}: {e}")
             continue
 
-    # Save the collected data to the output CSV
-    output_df = pd.DataFrame(output_data)
+    # Save to output CSV
     try:
-        output_df.to_csv(output_csv, index=False)
+        with open(output_csv, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(header)  # Write the header
+            writer.writerows(output_data)  # Write all the data
         print(f"Results saved to '{output_csv}'.")
     except Exception as e:
         print(f"Error saving output CSV file: {e}")
